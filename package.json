@@ -24,6 +24,9 @@
     "eject": "react-scripts eject",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
