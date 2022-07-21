@@ -2,6 +2,7 @@ import React from 'react';
 
 import SidebarHeader from './SidebarHeader';
 import SidebarBody from './SidebarBody';
+import SidebarFooter from './SidebarFooter';
 
 import styles from '../../../styles/components/ui/sidebar/Sidebar.module.scss';
 
@@ -14,6 +15,7 @@ const Sidebar = ({ selected }: Props) => {
     <div className={styles.sidebar}>
       <SidebarHeader />
       <SidebarBody selected={selected} />
+      <SidebarFooter />
     </div>
   );
 };
