@@ -8,11 +8,13 @@
     align-items: center;
 
     &__logo {
+      margin: 0.43px 4.75px 3.17px 4.75px;
       width: 38px;
       height: 38px;
     }
 
     &__title {
+      margin-left: 3px;
       font-family: 'Spartan';
       font-style: normal;
       font-weight: 600;
