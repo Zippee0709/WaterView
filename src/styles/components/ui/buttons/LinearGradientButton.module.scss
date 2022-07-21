@@ -1,0 +1,23 @@
+.linear-gradient-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 17px 36px;
+
+  width: 100%;
+  height: 100%;
+
+  background: radial-gradient(255.8% 457.4% at 88.45% 24.64%, #c27fcf 0%, #0368ff 100%);
+  /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+
+  border-radius: 18px;
+
+  &__label {
+    font-family: 'Spartan';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 146.5%;
+    color: #ffffff;
+  }
+}
