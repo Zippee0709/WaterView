@@ -11,10 +11,12 @@ const Landing = () => {
   return (
     <div className={styles.landing}>
       <LandingBackground />
-      <LandingNavbar />
       <div className={styles.landing__content}>
-        <LandingBody />
-        <LandingActions />
+        <LandingNavbar />
+        <div className={styles.landing__content__body}>
+          <LandingBody />
+          <LandingActions />
+        </div>
       </div>
     </div>
   );

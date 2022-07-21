@@ -8,6 +8,16 @@
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 54px;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      width: 700px;
+      gap: 54px;
+      margin-top: 123px;
+      margin-left: 148px;
+    }
   }
 }
