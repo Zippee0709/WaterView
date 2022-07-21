@@ -5,7 +5,7 @@ import styles from '../styles/pages/Dashboard.module.scss';
 const Dashboard = () => {
   return (
     <div className={styles.dashboard}>
-      <Sidebar />
+      <Sidebar selected="Dashboard" />
       Welcome to the dashboard !
     </div>
   );
