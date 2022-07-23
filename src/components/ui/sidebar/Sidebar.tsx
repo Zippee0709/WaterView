@@ -12,11 +12,11 @@ interface Props {
 
 const Sidebar = ({ selected }: Props) => {
   return (
-    <div className={styles.sidebar}>
+    <section className={styles.sidebar}>
       <SidebarHeader />
       <SidebarBody selected={selected} />
       <SidebarFooter />
-    </div>
+    </section>
   );
 };
 

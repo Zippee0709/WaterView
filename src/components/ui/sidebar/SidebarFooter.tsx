@@ -11,7 +11,7 @@ const SidebarFooter = () => {
     <button className={styles['sidebar-footer']} onClick={() => navigate('/')}>
       <div className={styles['sidebar-footer__background']} />
       <ExitIcon className={styles['sidebar-footer__logo']} fill={UNSELECTED_COLOR} stroke={UNSELECTED_COLOR} />
-      <p className={styles['sidebar-footer__label']}>Déconnexion</p>{' '}
+      <p className={styles['sidebar-footer__label']}>Déconnexion</p>
     </button>
   );
 };
