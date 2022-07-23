@@ -1,0 +1,53 @@
+.text-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #dfe0eb;
+  border-radius: 8px;
+  width: 100%;
+  min-width: 258px;
+  height: 100%;
+  min-height: 134px;
+
+  &:hover {
+    border: 1px solid #3751ff;
+
+    h2,
+    strong {
+      color: #3751ff;
+    }
+  }
+
+  &:focus {
+    border: 1px solid #3751ff;
+
+    h2,
+    strong {
+      color: #3751ff;
+    }
+  }
+
+  &__label {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: #9fa2b4;
+  }
+
+  &__value {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #252733;
+  }
+}

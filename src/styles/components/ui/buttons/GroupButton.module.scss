@@ -1,0 +1,44 @@
+.group-button {
+  display: flex;
+  background: #ffffff;
+
+  height: 100%;
+  width: 100%;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+    border: 1px solid #d0d5dd;
+    border-right: none;
+
+    &--selected {
+      background: #d0d5dd;
+    }
+
+    &:first-of-type {
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+
+    &:last-of-type {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+      border-right: 1px solid #d0d5dd;
+    }
+
+    &:hover {
+      background: #f2f4f7;
+    }
+
+    &__label {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      color: #344054;
+    }
+  }
+}
