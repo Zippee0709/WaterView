@@ -1,4 +1,13 @@
 .dashboard {
   display: flex;
   width: 100%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 37px;
+
+    background-color: #f7f8fc;
+  }
 }
