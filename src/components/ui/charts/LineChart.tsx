@@ -17,7 +17,7 @@ ChartJS.register(LineController, LineElement, PointElement, LinearScale, Categor
 
 interface Props {
   labels: string[];
-  datas: string[];
+  datas: string[] | number[];
   yAxisLabel?: string;
   xAxisLabel?: string;
 }
@@ -51,7 +51,7 @@ const LineChart = ({ labels, datas, yAxisLabel = '', xAxisLabel = '' }: Props) =
         },
         scales: {
           y: {
-            beginAtZero: true,
+            beginAtZero: false,
 
             title: {
               display: yAxisLabel !== '' ? true : false,
@@ -63,7 +63,7 @@ const LineChart = ({ labels, datas, yAxisLabel = '', xAxisLabel = '' }: Props) =
             },
           },
           x: {
-            beginAtZero: true,
+            beginAtZero: false,
             title: {
               display: yAxisLabel !== '' ? true : false,
               text: xAxisLabel,

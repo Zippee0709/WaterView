@@ -7,6 +7,30 @@
   width: 100%;
   height: 100%;
 
+  &:hover {
+    background-color: rgba(158, 161, 179, 0.08);
+
+    p,
+    strong {
+      color: #dde2ff;
+    }
+    svg {
+      fill: #dde2ff;
+      stroke: #dde2ff;
+    }
+  }
+
+  &:focus {
+    p,
+    strong {
+      color: #dde2ff;
+    }
+    svg {
+      fill: #dde2ff;
+      stroke: #dde2ff;
+    }
+  }
+
   &__select {
     width: 3px;
     height: 100%;
@@ -17,6 +41,8 @@
     height: 16px;
     margin-left: 29px;
     margin-right: 24px;
+    fill: #9fa2b4;
+    stroke: #9fa2b4;
   }
 
   &__label {
@@ -39,6 +65,30 @@
   width: 100%;
   height: 100%;
   background-color: rgba(158, 161, 179, 0.08);
+
+  &:hover {
+    background-color: rgba(158, 161, 179, 0.08);
+
+    p,
+    strong {
+      color: #dde2ff;
+    }
+    svg {
+      fill: #dde2ff;
+      stroke: #dde2ff;
+    }
+  }
+
+  &:focus {
+    p,
+    strong {
+      color: #dde2ff;
+    }
+    svg {
+      fill: #dde2ff;
+      stroke: #dde2ff;
+    }
+  }
 
   &__select {
     width: 3px;

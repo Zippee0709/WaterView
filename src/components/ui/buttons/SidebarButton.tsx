@@ -12,17 +12,14 @@ interface Props {
   path: string;
 }
 
-const SELECTED_COLOR = '#DDE2FF';
-const UNSELECTED_COLOR = '#9FA2B4';
-
 const SidebarButton = ({ selected, label, path }: Props) => {
   const navigate = useNavigate();
 
-  const RenderSidebarIcon = (label: string, color: string = UNSELECTED_COLOR) => {
+  const RenderSidebarIcon = (label: string) => {
     if (label === 'Dashboard') {
-      return <DashboardIcon className={styles['sidebar-button__logo']} fill={color} stroke={color} />;
+      return <DashboardIcon className={styles['sidebar-button__logo']} />;
     }
-    return <StationIcon className={styles['sidebar-button__logo']} fill={color} stroke={color} />;
+    return <StationIcon className={styles['sidebar-button__logo']} />;
   };
 
   return (
@@ -30,14 +27,13 @@ const SidebarButton = ({ selected, label, path }: Props) => {
       {selected === label ? (
         <button className={styles['sidebar-button--selected']} onClick={() => window.location.reload()}>
           <div className={styles['sidebar-button--selected__select']} />
-          <div className={styles['sidebar-button--selected__background']} />
-          {RenderSidebarIcon(label, SELECTED_COLOR)}
+          {RenderSidebarIcon(label)}
           <p className={styles['sidebar-button--selected__label']}>{label}</p>
         </button>
       ) : (
         <button className={styles['sidebar-button']} onClick={() => navigate(path)}>
-          <div className={styles['sidebar-button__select']} />
-          {RenderSidebarIcon(label, UNSELECTED_COLOR)}
+          <div id="select" className={styles['sidebar-button__select']} />
+          {RenderSidebarIcon(label)}
           <p className={styles['sidebar-button__label']}>{label}</p>
         </button>
       )}

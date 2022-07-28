@@ -10,11 +10,38 @@
 
   border-top: 1px solid #a4a6b3;
 
+  &:hover {
+    background-color: rgba(158, 161, 179, 0.08);
+
+    p,
+    strong {
+      color: #dde2ff;
+    }
+    svg {
+      fill: #dde2ff;
+      stroke: #dde2ff;
+    }
+  }
+
+  &:focus {
+    p,
+    strong {
+      color: #dde2ff;
+    }
+    svg {
+      fill: #dde2ff;
+      stroke: #dde2ff;
+    }
+  }
+
   &__logo {
     width: 16px;
     height: 16px;
     margin-left: 32px;
     margin-right: 24px;
+
+    fill: #9fa2b4;
+    stroke: #9fa2b4;
   }
 
   &__label {
