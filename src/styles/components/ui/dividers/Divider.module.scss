@@ -1,0 +1,11 @@
+.divider {
+  border: 1px solid #dfe0eb;
+
+  &__horizontal {
+    width: 100%;
+  }
+
+  &__vertical {
+    height: 100%;
+  }
+}

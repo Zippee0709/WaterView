@@ -7,7 +7,7 @@ const SidebarHeader = () => {
   return (
     <div className={styles['sidebar-header']}>
       <img className={styles['sidebar-header__logo']} src={Logo} alt="app-sidebar-logo" />
-      <h6 className={styles['sidebar-header__title']}>WaterView</h6>
+      <h1 className={styles['sidebar-header__title']}>WaterView</h1>
     </div>
   );
 };
