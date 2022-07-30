@@ -21,7 +21,7 @@ const SidebarItems: ISidebarItem[] = [
 ];
 
 interface Props {
-  selected: 'Dashboard' | 'Stations';
+  selected: 'Dashboard' | 'Stations' | 'Station';
 }
 
 const SidebarBody = ({ selected }: Props) => {

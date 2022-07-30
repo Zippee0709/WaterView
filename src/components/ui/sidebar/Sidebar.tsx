@@ -7,7 +7,7 @@ import SidebarFooter from './SidebarFooter';
 import styles from '../../../styles/components/ui/sidebar/Sidebar.module.scss';
 
 interface Props {
-  selected: 'Dashboard' | 'Stations';
+  selected: 'Dashboard' | 'Stations' | 'Station';
 }
 
 const Sidebar = ({ selected }: Props) => {

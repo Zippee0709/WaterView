@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import TextAvatar from '../avatars/TextAvatar';
 import IconButton from '../buttons/IconButton';
 import { ReactComponent as ArrowRightIcon } from '../../../assets/icons/arrow-right.svg';
@@ -10,6 +12,8 @@ interface Props {
 }
 
 const StationCard = ({ station }: Props) => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles['station-card']}>
       <div className={styles['station-card__content']}>
@@ -41,7 +45,7 @@ const StationCard = ({ station }: Props) => {
           </p>
         </div>
         <div className={styles['station-card__content__button']}>
-          <IconButton>
+          <IconButton onClick={() => navigate(`/station/${station.code_station}`)}>
             <ArrowRightIcon />
           </IconButton>
         </div>

@@ -1,0 +1,33 @@
+.station {
+  display: flex;
+  width: 100%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 37px;
+    background-color: #f7f8fc;
+
+    &__header {
+      margin-bottom: 54px;
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 30px;
+
+      &__informations {
+        display: flex;
+        gap: 30px;
+        height: 134px;
+      }
+
+      &__graphic {
+        flex-grow: 1;
+      }
+    }
+  }
+}
