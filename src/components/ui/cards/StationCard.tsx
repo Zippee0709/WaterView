@@ -19,7 +19,7 @@ const StationCard = ({ station }: Props) => {
       <div className={styles['station-card__content']}>
         <div className={styles['station-card__content__item']}>
           <div className={styles['station-card__content__item__avatar']}>
-            <TextAvatar label="27" />
+            <TextAvatar label={station.code_departement} />
           </div>
           <div className={styles['station-card__content__item__text-container']}>
             <p className={styles['station-card__content__item__title']}>{station.libelle_station}</p>
