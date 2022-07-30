@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
+import { AxiosError } from 'axios';
 
 import { GetStations } from '../../../queries/stations/GetStations';
 
@@ -8,22 +10,24 @@ import SortButton from '../buttons/SortButton';
 import Pagination from '../paginations/Pagination';
 import Loading from '../loading/Loading';
 
+import { IError } from '../../../types/ErrorType';
+
 import styles from '../../../styles/components/ui/cards/StationListCard.module.scss';
 
 const StationListCard = () => {
+  const navigate = useNavigate();
   const [sort, setSort] = useState<string>('desc');
   const [page, setPage] = useState(1);
 
-  const { data, isLoading, isFetching, error, refetch } = useQuery('GetStations', () =>
-    GetStations({ page: page, size: 6 }),
-  );
+  const { data, isLoading, isFetching, refetch } = useQuery('GetStations', () => GetStations({ page: page, size: 6 }), {
+    onError: (error: AxiosError<IError>) => {
+      navigate(`/error/${error.response?.data.status}`);
+    },
+  });
 
   if (isLoading === false && data === undefined) {
+    navigate(`/error/404`);
     return <div>Invalid Station</div>;
-  }
-
-  if (isLoading === false && error) {
-    return <div>Error</div>;
   }
 
   const OnClickPrevious = () => {

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
+import { AxiosError } from 'axios';
+
 import { GetStations } from '../queries/stations/GetStations';
 
 import Sidebar from '../components/ui/sidebar/Sidebar';
@@ -10,12 +12,18 @@ import TextIconPressableCard from '../components/ui/cards/TextIconPressableCard'
 import GraphicCard from '../components/ui/cards/GraphicCard';
 import Loading from '../components/ui/loading/Loading';
 
+import { IError } from '../types/ErrorType';
+
 import styles from '../styles/pages/Dashboard.module.scss';
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const [page, SetPage] = useState(1);
-  const { isLoading, isFetching, data, refetch } = useQuery('GetStation', () => GetStations({ page: page, size: 1 }));
+  const { isLoading, isFetching, data, refetch } = useQuery('GetStation', () => GetStations({ page: page, size: 1 }), {
+    onError: (error: AxiosError<IError>) => {
+      navigate(`/error/${error.response?.data.status}`);
+    },
+  });
 
   useEffect(() => {
     refetch();
@@ -36,7 +44,8 @@ const Dashboard = () => {
   };
 
   if (isLoading === false && data === undefined) {
-    return <div>Invalid Station</div>;
+    navigate(`/error/404`);
+    return <div>Invalid data</div>;
   }
 
   return (

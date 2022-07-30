@@ -10,6 +10,7 @@ import Landing from './pages/Landing';
 import Dashboard from './pages/Dashboard';
 import Stations from './pages/Stations';
 import Station from './pages/Station';
+import Error from './pages/Error';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -47,6 +48,7 @@ ReactDOM.render(
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/stations" element={<Stations />} />
           <Route path="/station/:id" element={<Station />} />
+          <Route path="/error/:code" element={<Error />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
