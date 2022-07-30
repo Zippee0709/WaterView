@@ -1,5 +1,7 @@
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { AxiosError } from 'axios';
 
 import { GetStation } from '../queries/stations/GetStation';
 
@@ -9,14 +11,22 @@ import TextPressableCard from '../components/ui/cards/TextPressableCard';
 import GraphicCard from '../components/ui/cards/GraphicCard';
 import Loading from '../components/ui/loading/Loading';
 
+import { IError } from '../types/ErrorType';
+
 import styles from '../styles/pages/Station.module.scss';
 
 const Station = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
 
-  const { isLoading, isFetching, data } = useQuery('GetStation', () => GetStation({ id: id as string }));
+  const { isLoading, isFetching, data } = useQuery('GetStation', () => GetStation({ id: id as string }), {
+    onError: (error: AxiosError<IError>) => {
+      navigate(`/error/${error.response?.data.status}`);
+    },
+  });
 
   if (isLoading === false && data === undefined) {
+    navigate(`/error/404`);
     return <div>Invalid Station</div>;
   }
 

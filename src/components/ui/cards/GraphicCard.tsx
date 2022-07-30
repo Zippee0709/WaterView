@@ -1,13 +1,17 @@
 import { useState } from 'react';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
+import { AxiosError } from 'axios';
 
-import { IGetStationsOutput } from '../../../types/StationsType';
 import { GetStationTemperature } from '../../../queries/temperatures/GetStationTemperature';
 
 // import GroupButton from '../buttons/GroupButton';
 import InformationsCard from './InformationsCard';
 import LineChart from '../charts/LineChart';
 import Loading from '../loading/Loading';
+
+import { IGetStationsOutput } from '../../../types/StationsType';
+import { IError } from '../../../types/ErrorType';
 
 import styles from '../../../styles/components/ui/cards/GraphicCard.module.scss';
 
@@ -18,11 +22,12 @@ interface Props {
 const GraphicCard = ({ station }: Props) => {
   // const buttonItems = ['Jour', 'Semaine', 'Mois', 'Année'];
   // const [selected, setSelected] = useState(buttonItems[0]);
+  const navigate = useNavigate();
   const [labels, setLabels] = useState<string[]>([]);
   const [temperatures, setTemperature] = useState<number[]>([]);
   const [averageTemperature, SetAverageTemperature] = useState('0');
 
-  const { isLoading, data, error } = useQuery(
+  const { isLoading, data } = useQuery(
     'GetStationTemperature',
     () => GetStationTemperature({ id: station.data[0].code_station, page: 1 }),
     {
@@ -35,15 +40,15 @@ const GraphicCard = ({ station }: Props) => {
         const avg = sum / temperatures.length || 0;
         SetAverageTemperature(avg.toFixed(1).toString());
       },
+      onError: (error: AxiosError<IError>) => {
+        navigate(`/error/${error.response?.data.status}`);
+      },
     },
   );
 
   if (station === undefined || data === undefined) {
+    navigate(`/error/404`);
     return <div>Invalid Station</div>;
-  }
-
-  if (error) {
-    return <div>Error</div>;
   }
 
   return (
