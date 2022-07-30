@@ -13,11 +13,11 @@ import styles from '../styles/pages/Dashboard.module.scss';
 
 const Dashboard = () => {
   const [page, SetPage] = useState(1);
-  const { isLoading, isFetching, data, refetch } = useQuery('GetStation', () => GetStations({ page: page }));
+  const { isLoading, isFetching, data, refetch } = useQuery('GetStation', () => GetStations({ page: page, size: 1 }));
 
   useEffect(() => {
     refetch();
-  }, [page]);
+  }, [page, refetch]);
 
   const OnClickPrevious = () => {
     if (data) {
@@ -33,7 +33,7 @@ const Dashboard = () => {
     }
   };
 
-  if (data === undefined) {
+  if (isLoading === false && data === undefined) {
     return <div>Invalid Station</div>;
   }
 

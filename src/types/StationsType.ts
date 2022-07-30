@@ -1,6 +1,6 @@
 import { IBase } from './BaseType';
 
-interface IStation {
+export interface IStation {
   code_station: string;
   libelle_station: string;
   uri_station: string;

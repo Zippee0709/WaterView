@@ -3,17 +3,13 @@ import React from 'react';
 import styles from '../../../styles/components/ui/avatars/TextAvatar.module.scss';
 
 interface Props {
-  firstName: string;
-  lastName: string;
+  label: string;
 }
 
-const TextAvatar = ({ firstName, lastName }: Props) => {
+const TextAvatar = ({ label }: Props) => {
   return (
     <div className={styles['text-avatar']}>
-      <p className={styles['text-avatar__label']}>
-        {firstName[0]}
-        {lastName[0]}
-      </p>
+      <p className={styles['text-avatar__label']}>{label}</p>
     </div>
   );
 };

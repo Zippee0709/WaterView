@@ -1,0 +1,22 @@
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 24px;
+
+  &__label {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: right;
+    letter-spacing: 0.3px;
+    color: #9fa2b4;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 12px;
+  }
+}

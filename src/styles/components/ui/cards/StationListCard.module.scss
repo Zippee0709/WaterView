@@ -1,13 +1,60 @@
 .station-list-card {
   display: flex;
   flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #dfe0eb;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
 
   &__header {
+    display: flex;
+    margin: 32px 32px 48px 32px;
+
+    &__title {
+      flex-grow: 1;
+      font-family: 'Mulish';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 19px;
+      line-height: 24px;
+      letter-spacing: 0.4px;
+      color: #252733;
+    }
   }
 
   &__body {
+    flex-grow: 1;
+
+    &__top {
+      display: flex;
+      height: 30px;
+      border-bottom: 1.5px solid #dfe0eb;
+
+      &__item {
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.2px;
+        color: #9fa2b4;
+        width: 20%;
+
+        &:first-of-type {
+          padding-left: 32px;
+          width: 40%;
+        }
+
+        &:last-of-type {
+          padding-right: 32px;
+        }
+      }
+    }
   }
 
   &__footer {
+    display: flex;
+    margin: 24px 32px 32px 32px;
   }
 }
