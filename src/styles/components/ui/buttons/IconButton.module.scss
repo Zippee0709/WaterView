@@ -5,8 +5,17 @@
   padding: 0;
   margin: 0;
 
-  &__icon {
-    width: 16px;
-    height: 16px;
+  svg {
+    stroke: #9fa2b4;
+  }
+
+  &:hover {
+    p,
+    strong {
+      color: #252733;
+    }
+    svg {
+      stroke: #252733;
+    }
   }
 }

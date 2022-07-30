@@ -1,0 +1,58 @@
+.station-card {
+  display: flex;
+  height: 92px;
+  width: 100%;
+  border-bottom: 1px solid #dfe0eb;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 32px 24px 32px;
+    width: 100%;
+
+    &__item {
+      display: flex;
+      width: 20%;
+
+      &__avatar {
+        padding-right: 16px;
+      }
+
+      &__text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      &__title {
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color: #252733;
+      }
+
+      &__subtitle {
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.1px;
+        color: #c5c7cd;
+      }
+
+      &:first-of-type {
+        width: 40%;
+      }
+    }
+
+    &__button {
+      position: absolute;
+      right: 100px;
+    }
+  }
+}

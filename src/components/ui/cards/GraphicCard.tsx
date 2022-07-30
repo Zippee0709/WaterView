@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
 
 import { IGetStationsOutput } from '../../../types/StationsType';

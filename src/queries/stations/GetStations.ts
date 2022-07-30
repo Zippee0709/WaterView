@@ -5,7 +5,7 @@ import { IGetStationsOutput } from '../../types/StationsType';
 
 interface IGetStationsInput {
   page: number;
-  size?: number;
+  size: number;
 }
 
 export const GetStations = async ({ page, size = 1 }: IGetStationsInput) => {
