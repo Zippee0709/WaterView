@@ -4,6 +4,16 @@
   width: 100%;
   gap: 24px;
 
+  &__page {
+    display: flex;
+  }
+
+  &__input {
+    margin: 0px 4px;
+    width: 48px;
+    border: 1px solid #9fa2b4;
+  }
+
   &__label {
     font-family: 'Mulish';
     font-style: normal;

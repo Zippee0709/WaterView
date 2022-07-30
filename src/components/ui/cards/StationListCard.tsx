@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import { AxiosError } from 'axios';
@@ -24,11 +24,6 @@ const StationListCard = () => {
       navigate(`/error/${error.response?.data.status}`);
     },
   });
-
-  if (isLoading === false && data === undefined) {
-    navigate(`/error/404`);
-    return <div>Invalid Station</div>;
-  }
 
   const OnClickPrevious = () => {
     if (data) {
@@ -58,6 +53,15 @@ const StationListCard = () => {
     }
   };
 
+  useEffect(() => {
+    refetch();
+  }, [page, refetch]);
+
+  if (isLoading === false && data === undefined) {
+    navigate(`/error/404`);
+    return <div>Invalid Station</div>;
+  }
+
   return (
     <div className={styles['station-list-card']}>
       {isLoading || isFetching ? (
@@ -85,9 +89,10 @@ const StationListCard = () => {
           </div>
           <div className={styles['station-list-card__footer']}>
             <Pagination
-              current={(page - 1) * 6 + 1}
-              size={page * 6 > data.count ? data.count : page * 6}
+              page={page}
+              offset={6}
               count={data.count}
+              setPage={setPage}
               onClickPrevious={() => OnClickPrevious()}
               onClickNext={() => OnClickNext()}
             />
