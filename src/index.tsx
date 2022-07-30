@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
 import Dashboard from './pages/Dashboard';
 import Stations from './pages/Stations';
+import Station from './pages/Station';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -45,6 +46,7 @@ ReactDOM.render(
           <Route path="/" element={<Landing />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/stations" element={<Stations />} />
+          <Route path="/station/:id" element={<Station />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

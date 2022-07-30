@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import { GetStations } from '../queries/stations/GetStations';
 
 import Sidebar from '../components/ui/sidebar/Sidebar';
@@ -12,6 +13,7 @@ import Loading from '../components/ui/loading/Loading';
 import styles from '../styles/pages/Dashboard.module.scss';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [page, SetPage] = useState(1);
   const { isLoading, isFetching, data, refetch } = useQuery('GetStation', () => GetStations({ page: page, size: 1 }));
 
@@ -50,8 +52,16 @@ const Dashboard = () => {
           <div className={styles.dashboard__content__body}>
             <div className={styles.dashboard__content__body__informations}>
               <TextIconPressableCard label="Station précédente" icon="left" onClick={() => OnClickPrevious()} />
-              <TextPressableCard label="Station actuelle" value={page.toString()} />
-              <TextPressableCard label="Nombre de stations" value={data.count.toString()} />
+              <TextPressableCard
+                label="Station actuelle"
+                value={page.toString()}
+                onClick={() => navigate(`/station/${data.data[0].code_station}`)}
+              />
+              <TextPressableCard
+                label="Nombre de stations"
+                value={data.count.toString()}
+                onClick={() => navigate(`/stations`)}
+              />
               <TextIconPressableCard label="Station suivante" icon="right" onClick={() => OnClickNext()} />
             </div>
             <div className={styles.dashboard__content__body__graphic}>
